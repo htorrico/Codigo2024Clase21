@@ -1,0 +1,67 @@
+﻿<Window x:Class="WPFDemo.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFDemo"
+        mc:Ignorable="d"
+       Title="Calculator" Height="400" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBox x:Name="txtDisplay" 
+                 Grid.Row="0" 
+                 FontSize="24" 
+                 HorizontalAlignment="Stretch" 
+                 VerticalAlignment="Center" 
+                 Height="50"
+                 TextAlignment="Right"
+                 IsReadOnly="True"/>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- First Row (Numbers 7, 8, 9, Divide) -->
+            <Button Content="7" Background="red" Grid.Row="0" Grid.Column="0"/>
+            <Button Content="8" Background="red" Grid.Row="0" Grid.Column="1"/>
+            <Button Content="9" Background="red" Grid.Row="0" Grid.Column="2"/>
+            <Button Content="/" Background="red" Grid.Row="0" Grid.Column="3"/>
+
+            <!-- Second Row (Numbers 4, 5, 6, Multiply) -->
+            <Button Content="4" Background="green" Grid.Row="1" Grid.Column="0"/>
+            <Button Content="5" Background="green" Grid.Row="1" Grid.Column="1"/>
+            <Button Content="6" Background="green" Grid.Row="1" Grid.Column="2"/>
+            <Button Content="*" Background="green" Grid.Row="1" Grid.Column="3"/>
+
+            <!-- Third Row (Numbers 1, 2, 3, Minus) -->
+            <Button Content="1" Grid.Row="2" Grid.Column="0"/>
+            <Button Content="2" Grid.Row="2" Grid.Column="1"/>
+            <Button Content="3" Grid.Row="2" Grid.Column="2"/>
+            <Button Content="-" Grid.Row="2" Grid.Column="3"/>
+
+            <!-- Fourth Row (Number 0, Decimal, Equals, Plus) -->
+            <Button Content="0" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"/>
+            <Button Content="." Grid.Row="3" Grid.Column="2"/>
+            <Button Content="=" Grid.Row="3" Grid.Column="3" Grid.RowSpan="2"/>
+            <!--<Button Content="+" Grid.Row="4" Grid.Column="3" Grid.RowSpan="1"/>-->
+
+            <!-- Clear Button -->
+            <Button Content="C" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3"/>
+        </Grid>
+    </Grid>
+</Window>
